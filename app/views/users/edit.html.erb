@@ -1,2 +1,28 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h2>Editer le Membre</h2>
+<br>
+<p> Membre n°<%= @user.id %>  -  <%= @user.email %> </p>
+<table>
+<%= render 'form'%>
+   <%= form_for(@user) do |f| %>
+
+      <label>Pseudo.............:</label>
+      <%= f.text_field :name %>
+<br>
+      <label>Email................:</label>
+      <%= f.email_field :email %>
+<br>
+      <label>Password.........:</label>
+      <%= f.password_field :password %>
+<br>
+      <label>Confirmation.....:</label>
+      <%= f.password_field :password_confirmation %>
+</table>
+<br><br>
+      <div class="form-group">
+         <button type="submit", class="btn btn-primary">Modifier</button>
+       </div>
+<p>
+<a href="<%= users_path %>" class="btn btn-danger btn-sm"
+data-confirm="Es-tu sur ?" data-method="DELETE">Supprimer</a>
+</p>
+  <% end %>

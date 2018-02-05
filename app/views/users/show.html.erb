@@ -1,2 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.name %></h1>
+<p><%= @user.email %></p>
+<br>
+<p>
+  <a href="<%= edit_user_path %>" class="btn btn-primary">Editer le Membre</a>
+</p>
+<br>
+<p>
+  <a href="<%= users_path %>" class="btn btn-primary">Retour vers les Membres</a>
+</p>
